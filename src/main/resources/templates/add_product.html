@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Product</title>
+</head>
+<body>
+    <h1>Add Product</h1>
+    <form action="/add_product" method="post" th:object="${product}">
+        <label>Supplier Name: <input type="text" name="supplierName" th:field="*{supplierName}" /></label><br>
+        <label>Supplier Email: <input type="email" name="supplierEmail" th:field="*{supplierEmail}" /></label><br>
+        <label>Date: <input type="date" name="date" th:field="*{date}" /></label><br>
+        <label>Brand: <input type="text" name="brand" th:field="*{brand}" /></label><br>
+        <label>Category: <input type="text" name="category" th:field="*{category}" /></label><br>
+        <label>Name: <input type="text" name="name" th:field="*{name}" /></label><br>
+        <label>Size: <input type="text" name="size" th:field="*{size}" /></label><br>
+        <label>Description: <textarea name="description" th:field="*{description}"></textarea></label><br>
+        <label>Quantity: <input type="number" name="quantity" th:field="*{quantity}" /></label><br>
+        <label>Color: <input type="text" name="color" th:field="*{color}" /></label><br>
+        <button type="submit">Add Product</button>
+    </form>
+</body>
+</html>

@@ -26,9 +26,8 @@ public class AdminLoginController {
     public String showIntelIntroduction() {
         return "intel_introduction"; // Ensure this is the correct view name (intel_introduction.html)
     }
-    
     @PostMapping("/loginp")
-    public String loginp(Login login, Model model, RedirectAttributes redirectAttributes) {
+    public String loginp(Login login, RedirectAttributes redirectAttributes) {
         Session session = sf.openSession();
         Login dlogin = session.createQuery("from Login where username = :username", Login.class)
                               .setParameter("username", login.getUsername())
@@ -38,7 +37,11 @@ public class AdminLoginController {
         String msg;
 
         if (dlogin != null && dlogin.getPassword().equals(login.getPassword())) {
-            msg = "Welcome";
+            msg = "Welcome, " + dlogin.getUsername(); // You can customize the welcome message here
+            
+            // Use flash attributes to pass the data after redirect
+            redirectAttributes.addFlashAttribute("userName", dlogin.getUsername());
+            redirectAttributes.addFlashAttribute("userEmail", dlogin.getEmail());
             page = "redirect:intel_introduction";  // Redirect to another page upon successful login
         } else {
             msg = "Invalid username or password";
@@ -49,6 +52,7 @@ public class AdminLoginController {
         session.close();
         return page;
     }
+
 
     @GetMapping("/CreateAccount")
     public String showRegistrationPage() {

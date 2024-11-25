@@ -35,13 +35,32 @@
                                         <div class="invalid-feedback">Please provide a username.</div>
                                     </div>
                                     
-                                    <!-- Updated Email field with @gmail.com validation -->
-                                    <div class="form-group">
-                                        <label class="form-label" for="emailverify">Email</label>
-                                        <input type="email" id="emailverify" name="email" class="form-control" placeholder="Email" 
-                                               required pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" title="Please enter a valid Gmail address (e.g., user@gmail.com)">
-                                        <div class="invalid-feedback">Please provide a valid Gmail address.</div>
-                                    </div>
+                                    
+                                  <!-- Email field -->
+<div class="form-group">
+    <label class="form-label" for="emailverify">Email</label>
+    <input type="email" id="emailverify" name="email" class="form-control" placeholder="Email" 
+           required pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" title="Please enter a valid Gmail address (e.g., user@gmail.com)">
+    <div class="invalid-feedback">Please provide a valid Gmail address.</div>
+</div>
+
+<!-- OTP field (hidden initially) -->
+<div class="form-group" id="otp-section" style="display: none;">
+    <label class="form-label" for="otp">Enter OTP</label>
+    <input type="text" id="otp" name="otp" class="form-control" placeholder="Enter OTP" required>
+    <div class="invalid-feedback">Please enter the OTP sent to your email.</div>
+</div>
+
+<button id="js-register-btn" type="submit" class="btn btn-block btn-danger btn-lg mt-3">Register</button>
+
+<script>
+    // Enable OTP field after the OTP is sent
+    function showOTPField() {
+        document.getElementById("otp-section").style.display = "block";
+    }
+</script>
+
+
                                     
                                     <!-- Password field -->
                                     <div class="form-group">
@@ -52,7 +71,7 @@
 
                                     <div class="row no-gutters">
                                         <div class="col-md-4 ml-auto text-right">
-                                            <button id="js-login-btn" type="submit" class="btn btn-block btn-danger btn-lg mt-3">Register</button>
+<button id="js-register-btn" type="submit" class="btn btn-block btn-danger btn-lg mt-3">Register</button>
                                         </div>
                                     </div>
                                 </form>

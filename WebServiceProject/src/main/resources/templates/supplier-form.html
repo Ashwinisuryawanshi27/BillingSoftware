@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="_csrf" content="${_csrf.token}">
+    <meta name="_csrf_header" content="${_csrf.headerName}">
+    <title>Supplier Form</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="background-image: url('/img/backgrounds/bg-4.png'); background-size: cover; background-position: center;">
+
+    <div class="container mt-3">
+        <h2 class="text-center mb-4">Supplier Form</h2>
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Supplier Form</h5>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/suppliers/save}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" th:value="${newsupplier.name}" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" th:value="${newsupplier.email}" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="phone" name="phone" th:value="${newsupplier.phone}" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageFile">Image:</label>
+                        <input type="file" id="imageFile" name="imageFile" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Save Supplier</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

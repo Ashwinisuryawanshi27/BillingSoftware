@@ -22,6 +22,11 @@ public class AdminLoginController {
         return "page_login";  // Show login page
     }
 
+    @GetMapping("/intel_analytics_dashboard")
+    public String intel_analytics_dashboard() {
+        return "intel_analytics_dashboard"; // Ensure this is the correct view name (intel_introduction.html)
+    }
+    
     @GetMapping("/intel_introduction")
     public String showIntelIntroduction() {
         return "intel_introduction"; // Ensure this is the correct view name (intel_introduction.html)
@@ -37,22 +42,21 @@ public class AdminLoginController {
         String msg;
 
         if (dlogin != null && dlogin.getPassword().equals(login.getPassword())) {
-            msg = "Welcome, " + dlogin.getUsername(); // You can customize the welcome message here
+            msg = "Welcome, " + dlogin.getUsername();
             
-            // Use flash attributes to pass the data after redirect
-            redirectAttributes.addFlashAttribute("userName", dlogin.getUsername());
+            // Passing user information to the redirect
+            redirectAttributes.addFlashAttribute("userName", dlogin.getFirstName() + " " + dlogin.getLastName());
             redirectAttributes.addFlashAttribute("userEmail", dlogin.getEmail());
-            page = "redirect:intel_introduction";  // Redirect to another page upon successful login
+            page = "redirect:intel_introduction";  // Redirect after successful login
         } else {
             msg = "Invalid username or password";
-            redirectAttributes.addFlashAttribute("msg", msg);  // Set flash message for error
+            redirectAttributes.addFlashAttribute("msg", msg);  // Passing error message
             page = "redirect:/login";  // Redirect back to login page with error message
         }
 
         session.close();
         return page;
     }
-
 
     @GetMapping("/CreateAccount")
     public String showRegistrationPage() {

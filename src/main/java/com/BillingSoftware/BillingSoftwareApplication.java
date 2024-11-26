@@ -10,5 +10,4 @@ public class BillingSoftwareApplication {
 		SpringApplication.run(BillingSoftwareApplication.class, args);
 		System.out.println("Done..");
 	}
-
 }

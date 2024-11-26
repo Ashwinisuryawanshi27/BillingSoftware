@@ -1,331 +1,340 @@
 <!DOCTYPE html>
-<!-- 
-Template Name: SmartAdmin Responsive WebApp - Template build with Twitter Bootstrap 4
-Version: 4.5.1
-Author: Sunnyat A.
-Website: http://gootbootstrap.com
-Purchase: https://wrapbootstrap.com/theme/smartadmin-responsive-webapp-WB0573SK0?ref=myorange
-License: You must have a valid license purchased only from wrapbootstrap.com (link above) in order to legally use this theme for your project.
--->
 <html lang="en">
     
 <!-- Mirrored from www.gotbootstrap.com/themes/smartadmin/4.5.1/intel_introduction.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Apr 2023 07:42:05 GMT -->
 <head>
-        <meta charset="utf-8">
-        <title>
-            Introduction - Application Intel - SmartAdmin v4.5.1
-        </title>
-        <meta name="description" content="Introduction">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
-        <!-- Call App Mode on ios devices -->
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <!-- Remove Tap Highlight on Windows Phone IE -->
-        <meta name="msapplication-tap-highlight" content="no">
-        <!-- base css -->
-        <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
-        <link id="appbundle" rel="stylesheet" media="screen, print" href="css/app.bundle.css">
-        <link id="mytheme" rel="stylesheet" media="screen, print" href="#">
-        <link id="myskin" rel="stylesheet" media="screen, print" href="css/skins/skin-master.css">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-        <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    </head>
-   
-    <body class="mod-bg-1 mod-nav-link ">
-        <script>
-           
-            'use strict';
+    <meta charset="utf-8">
+    <title>Introduction - Application Intel - SmartAdmin v4.5.1</title>
+    <meta name="description" content="Introduction">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+    <!-- Call App Mode on ios devices -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Remove Tap Highlight on Windows Phone IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- base css -->
+    <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
+    <link id="appbundle" rel="stylesheet" media="screen, print" href="css/app.bundle.css">
+    <link id="mytheme" rel="stylesheet" media="screen, print" href="#">
+    <link id="myskin" rel="stylesheet" media="screen, print" href="css/skins/skin-master.css">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+</head>
 
-            var classHolder = document.getElementsByTagName("BODY")[0],
-               
-                themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-                {},
-                themeURL = themeSettings.themeURL || '',
-                themeOptions = themeSettings.themeOptions || '';
-          
-            if (themeSettings.themeOptions)
-            {
-                classHolder.className = themeSettings.themeOptions;
-                console.log("%c✔ Theme settings loaded", "color: #148f32");
-            }
-            else
-            {
-                console.log("%c✔ Heads up! Theme settings is empty or does not exist, loading default settings...", "color: #ed1c24");
-            }
-            if (themeSettings.themeURL && !document.getElementById('mytheme'))
-            {
-                var cssfile = document.createElement('link');
-                cssfile.id = 'mytheme';
-                cssfile.rel = 'stylesheet';
-                cssfile.href = themeURL;
-                document.getElementsByTagName('head')[0].appendChild(cssfile);
+<body class="mod-bg-1 mod-nav-link ">
+    <script>
+        'use strict';
 
-            }
-            else if (themeSettings.themeURL && document.getElementById('mytheme'))
-            {
-                document.getElementById('mytheme').href = themeSettings.themeURL;
-            }
-           
-            var saveSettings = function()
-            {
-                themeSettings.themeOptions = String(classHolder.className).split(/[^\w-]+/).filter(function(item)
-                {
-                    return /^(nav|header|footer|mod|display)-/i.test(item);
-                }).join(' ');
-                if (document.getElementById('mytheme'))
-                {
-                    themeSettings.themeURL = document.getElementById('mytheme').getAttribute("href");
-                };
-                localStorage.setItem('themeSettings', JSON.stringify(themeSettings));
-            }
-           
-            var resetSettings = function()
-            {
-                localStorage.setItem("themeSettings", "");
-            }
+        var classHolder = document.getElementsByTagName("BODY")[0],
+            themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
+            {},
+            themeURL = themeSettings.themeURL || '',
+            themeOptions = themeSettings.themeOptions || '';
 
-        </script>
-        <!-- BEGIN Page Wrapper -->
-        <div class="page-wrapper">
-            <div class="page-inner">
-                <!-- BEGIN Left Aside -->
-                <aside class="page-sidebar">
-                    <div class="page-logo">
-                        <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
-                            <img src="img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
-                            <span class="page-logo-text mr-1">Billing WebApp</span>
-                            <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
-                         
-                        </a>
-                    </div>
-                    <!-- BEGIN PRIMARY NAVIGATION -->
-                    <nav id="js-primary-nav" class="primary-nav" role="navigation">
-                        <div class="nav-filter">
-                            <div class="position-relative">
-                                <input type="text" id="nav_filter_input" placeholder="Filter menu" class="form-control" tabindex="0">
-                                <a href="#" onclick="return false;" class="btn-primary btn-search-close js-waves-off" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar">
-                                    <i class="fal fa-chevron-up"></i>
-                                </a>
-                            </div>
+        if (themeSettings.themeOptions)
+        {
+            classHolder.className = themeSettings.themeOptions;
+            console.log("%c✔ Theme settings loaded", "color: #148f32");
+        }
+        else
+        {
+            console.log("%c✔ Heads up! Theme settings is empty or does not exist, loading default settings...", "color: #ed1c24");
+        }
+        if (themeSettings.themeURL && !document.getElementById('mytheme'))
+        {
+            var cssfile = document.createElement('link');
+            cssfile.id = 'mytheme';
+            cssfile.rel = 'stylesheet';
+            cssfile.href = themeURL;
+            document.getElementsByTagName('head')[0].appendChild(cssfile);
+
+        }
+        else if (themeSettings.themeURL && document.getElementById('mytheme'))
+        {
+            document.getElementById('mytheme').href = themeSettings.themeURL;
+        }
+
+        var saveSettings = function()
+        {
+            themeSettings.themeOptions = String(classHolder.className).split(/[^\w-]+/).filter(function(item)
+            {
+                return /^(nav|header|footer|mod|display)-/i.test(item);
+            }).join(' ');
+            if (document.getElementById('mytheme'))
+            {
+                themeSettings.themeURL = document.getElementById('mytheme').getAttribute("href");
+            };
+            localStorage.setItem('themeSettings', JSON.stringify(themeSettings));
+        }
+
+        var resetSettings = function()
+        {
+            localStorage.setItem("themeSettings", "");
+        }
+    </script>
+
+    <!-- BEGIN Page Wrapper -->
+    <div class="page-wrapper">
+        <div class="page-inner">
+            <!-- BEGIN Left Aside -->
+            <aside class="page-sidebar">
+                <div class="page-logo">
+                    <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
+                        <img src="img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
+                        <span class="page-logo-text mr-1">Billing WebApp</span>
+                    </a>
+                </div>
+
+                <!-- BEGIN PRIMARY NAVIGATION -->
+                <nav id="js-primary-nav" class="primary-nav" role="navigation">
+                    <div class="nav-filter">
+                        <div class="position-relative">
+                            <input type="text" id="nav_filter_input" placeholder="Filter menu" class="form-control" tabindex="0">
+                            <a href="#" onclick="return false;" class="btn-primary btn-search-close js-waves-off" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar">
+                                <i class="fal fa-chevron-up"></i>
+                            </a>
                         </div>
-                       
-                        <ul id="js-nav-menu" class="nav-menu">
-                            <li class="active open">
-                                <a href="#" title="Application Intel" data-filter-tags="application intel">
-                                    <i class="fal fa-info-circle"></i>
-                                    <span class="nav-link-text" data-i18n="nav.application_intel">DASHBOARD</span>
-                                </a>
-                               
-                            <li>
-                                <a href="#" title="Theme Settings" data-filter-tags="theme settings">
-                                    <i class="fal fa-cog"></i>
-                                    <span class="nav-link-text" data-i18n="nav.theme_settings">PRODUCT</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="settings_how_it_works.html" title="How it works" data-filter-tags="theme settings how it works">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_how_it_works">ADD PRODUCT</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings_layout_options.html" title="Layout Options" data-filter-tags="theme settings layout options">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_layout_options">ALL PRODUCT</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings_theme_modes.html" title="Theme Modes (beta)" data-filter-tags="theme settings theme modes (beta)">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_theme_modes_(beta)">ADD PRODUCT</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings_skin_options.html" title="Skin Options" data-filter-tags="theme settings skin options">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_skin_options">BRANDS</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings_saving_db.html" title="Saving to Database" data-filter-tags="theme settings saving to database">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_saving_to_database">PRINT BARCODE</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings_saving_db.html" title="Saving to Database" data-filter-tags="theme settings saving to database">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_saving_to_database">IMPORT PRODUCT</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                    </div>
 
-                            </li>
-                            <li>
-                                <a href="#" title="Documentation" data-filter-tags="documentation">
-                                    <i class="fal fa-book"></i>
-                                    <span class="nav-link-text" data-i18n="nav.documentation">SALES</span>
-                                </a>
-                                
-                            </li>
-    
-                            <li>
+                    <ul id="js-nav-menu" class="nav-menu">
+                        <li class="active open">
+                            <a href="#" title="Application Intel" data-filter-tags="application intel">
+                                <i class="fal fa-info-circle"></i>
+                                <span class="nav-link-text" data-i18n="nav.application_intel">INTRODUCTION</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="intel_analytics_dashboard" title="Theme Settings" data-filter-tags="theme settings">
+                                <i class="fal fa-cog"></i>
+                                <span class="nav-link-text" data-i18n="nav.theme_settings">DASHBOARD</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+								
+                            <a href="#" title="Theme Settings" data-filter-tags="theme settings">
+                                <i class="fal fa-cog"></i>
+                                <span class="nav-link-text" data-i18n="nav.theme_settings">PRODUCT</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="settings_how_it_works.html" title="How it works" data-filter-tags="theme settings how it works">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_how_it_works">ADD PRODUCT</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="settings_layout_options.html" title="Layout Options" data-filter-tags="theme settings layout options">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_layout_options">ALL PRODUCT</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="settings_theme_modes.html" title="Theme Modes (beta)" data-filter-tags="theme settings theme modes (beta)">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_theme_modes_(beta)">ADD PRODUCT</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="settings_skin_options.html" title="Skin Options" data-filter-tags="theme settings skin options">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_skin_options">BRANDS</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="settings_saving_db.html" title="Saving to Database" data-filter-tags="theme settings saving to database">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_saving_to_database">PRINT BARCODE</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="settings_saving_db.html" title="Saving to Database" data-filter-tags="theme settings saving to database">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_saving_to_database">IMPORT PRODUCT</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        
+                        
+                          <li>
                                 <a href="#" title="Form Plugins" data-filter-tags="form plugins">
                                     <i class="fal fa-credit-card-front"></i>
-                                    <span class="nav-link-text" data-i18n="nav.form_plugins"> SUPPLIER</span>
+                                    <span class="nav-link-text" data-i18n="nav.form_plugins"> CUSTOMER</span>
                                 </a>
                                 <ul>
                                     <li>
                                         <a href="form_plugins_colorpicker.html" title="Color Picker" data-filter-tags="form plugins color picker">
-                                            <span class="nav-link-text" data-i18n="nav.form_plugins_color_picker">ADD SUPPLIER</span>
+                                            <span class="nav-link-text" data-i18n="nav.form_plugins_color_picker">ADD CUSTOMER</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="form_plugins_datepicker.html" title="Date Picker" data-filter-tags="form plugins date picker">
-                                            <span class="nav-link-text" data-i18n="nav.form_plugins_date_picker">UPDATE SUPPLIER</span>
+                                            <span class="nav-link-text" data-i18n="nav.form_plugins_date_picker">UPDATE CUSTOMER</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="form_plugins_colorpicker.html" title="Color Picker" data-filter-tags="form plugins color picker">
-                                            <span class="nav-link-text" data-i18n="nav.form_plugins_color_picker">DELETE SUPPLIER</span>
+                                            <span class="nav-link-text" data-i18n="nav.form_plugins_color_picker">CUSTOMER LIST</span>
                                         </a>
                                     </li>
                                 </ul>
+    
 
-                            <li>
-                                <a href="#" title="Theme Settings" data-filter-tags="theme settings">
-                                    <i class="fal fa-cog"></i>
-                                    <span class="nav-link-text" data-i18n="nav.theme_settings">PURCHASE</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="settings_how_it_works.html" title="How it works" data-filter-tags="theme settings how it works">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_how_it_works">PURCHASE BILL </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings_layout_options.html" title="Layout Options" data-filter-tags="theme settings layout options">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_layout_options">PURCHASE RETURN</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings_theme_modes.html" title="Theme Modes (beta)" data-filter-tags="theme settings theme modes (beta)">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_theme_modes_(beta)">PURCHASE ORDER </span>
-                                        </a>
-                                    </li>
-                                </ul>
+                        <li>
+                            <a href="#" title="Documentation" data-filter-tags="documentation">
+                                <i class="fal fa-book"></i>
+                                <span class="nav-link-text" data-i18n="nav.documentation">SALES</span>
+                            </a>
+                            
+                        </li>
 
-                            </li>
+                        <li>
+                            <a href="#" title="Form Plugins" data-filter-tags="form plugins">
+                                <i class="fal fa-credit-card-front"></i>
+                                <span class="nav-link-text" data-i18n="nav.form_plugins"> SUPPLIER</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="form_plugins_colorpicker.html" title="Color Picker" data-filter-tags="form plugins color picker">
+                                        <span class="nav-link-text" data-i18n="nav.form_plugins_color_picker">ADD SUPPLIER</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form_plugins_datepicker.html" title="Date Picker" data-filter-tags="form plugins date picker">
+                                        <span class="nav-link-text" data-i18n="nav.form_plugins_date_picker">UPDATE SUPPLIER</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="form_plugins_colorpicker.html" title="Color Picker" data-filter-tags="form plugins color picker">
+                                        <span class="nav-link-text" data-i18n="nav.form_plugins_color_picker">DELETE SUPPLIER</span>
+                                    </a>
+                                </li>
+                            </ul>
 
-                            <li>
-                                <a href="#" title="Theme Settings" data-filter-tags="theme settings">
-                                    <i class="fal fa-cog"></i>
-                                    <span class="nav-link-text" data-i18n="nav.theme_settings">STOCK</span>
-                                </a>
+                        <li>
+                            <a href="#" title="Theme Settings" data-filter-tags="theme settings">
+                                <i class="fal fa-cog"></i>
+                                <span class="nav-link-text" data-i18n="nav.theme_settings">PURCHASE</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="settings_how_it_works.html" title="How it works" data-filter-tags="theme settings how it works">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_how_it_works">PURCHASE BILL </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="settings_layout_options.html" title="Layout Options" data-filter-tags="theme settings layout options">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_layout_options">PURCHASE RETURN</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="settings_theme_modes.html" title="Theme Modes (beta)" data-filter-tags="theme settings theme modes (beta)">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_theme_modes_(beta)">PURCHASE ORDER </span>
+                                    </a>
+                                </li>
+                            </ul>
 
-                                <ul>
-                                    <li>
-                                        <a href="settings_how_it_works.html" title="How it works" data-filter-tags="theme settings how it works">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_how_it_works">ADD STOCK </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings_layout_options.html" title="Layout Options" data-filter-tags="theme settings layout options">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_layout_options">UPDATE STOCK</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings_theme_modes.html" title="Theme Modes (beta)" data-filter-tags="theme settings theme modes (beta)">
-                                            <span class="nav-link-text" data-i18n="nav.theme_settings_theme_modes_(beta)">DELETE STOCK </span>
-                                        </a>
-                                    </li>
-                                </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" title="Theme Settings" data-filter-tags="theme settings">
+                                <i class="fal fa-cog"></i>
+                                <span class="nav-link-text" data-i18n="nav.theme_settings">STOCK</span>
+                            </a>
+
+                            <ul>
+                                <li>
+                                    <a href="settings_how_it_works.html" title="How it works" data-filter-tags="theme settings how it works">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_how_it_works">ADD STOCK </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="settings_layout_options.html" title="Layout Options" data-filter-tags="theme settings layout options">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_layout_options">UPDATE STOCK</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="settings_theme_modes.html" title="Theme Modes (beta)" data-filter-tags="theme settings theme modes (beta)">
+                                        <span class="nav-link-text" data-i18n="nav.theme_settings_theme_modes_(beta)">DELETE STOCK </span>
+                                    </a>
+                                </li>
+                            </ul>
 
 
-                            </li>
+                        </li>
 
 
-                            <li>
-                                <a href="#" title="Documentation" data-filter-tags="documentation">
-                                    <i class="fal fa-book"></i>
-                                    <span class="nav-link-text" data-i18n="nav.documentation">REPORTS</span>
-                                </a>
-                                
-                            </li>
-                         
- 
-                    </nav>
-                   
-                </aside>
-                            <div>
-                               <a href="#" data-toggle="dropdown" title="drlantern@gotbootstrap.com" class="header-icon d-flex align-items-center justify-content-center ml-2" style="padding-left: 950px;">
-    <img src="img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
-    <!-- you can also add username next to the avatar with the codes below:
-    <span class="ml-1 mr-1 text-truncate text-truncate-header hidden-xs-down">Me</span>
-    <i class="ni ni-chevron-down hidden-xs-down"></i> -->
-</a>
+                        <li>
+                            <a href="#" title="Documentation" data-filter-tags="documentation">
+                                <i class="fal fa-book"></i>
+                                <span class="nav-link-text" data-i18n="nav.documentation">REPORTS</span>
+                            </a>
+                            
+                        </li>
 
-<div class="dropdown-menu dropdown-menu-animated dropdown-lg">
-    <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
-        <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
-            <span class="mr-2">
-                <img th:src="@{img/demo/avatars/avatar-admin.png}" class="rounded-circle profile-image" alt="User Profile">
-            </span>
-            <div class="info-card-text">
-                <!-- Display dynamic name and email -->
-                <div class="fs-lg text-truncate text-truncate-lg" th:text="${userName}">Dr. Codex Lantern</div>
-                <span class="text-truncate text-truncate-md opacity-80" th:text="${userEmail}">drlantern@gotbootstrap.com</span>
-            </div>
-        </div>
-    </div>
+                    </ul>
+                </nav>
+            </aside>
 
-    <div class="dropdown-divider m-0"></div>
-    <a class="dropdown-item fw-500 pt-3 pb-3" href="/login">
-        <span data-i18n="drpdwn.page-logout">Logout</span>
-    </a>
-</div>
-
-</div>
+            <div>
+                <a href="#" data-toggle="dropdown" title="drlantern@gotbootstrap.com" class="header-icon d-flex align-items-center justify-content-center ml-2" style="padding-left: 950px;">
+                    <img src="img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
+                </a>
+                <div class="dropdown-menu dropdown-menu-animated dropdown-lg">
+                    <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
+                        <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
+                            <span class="mr-2">
+                                <img th:src="@{img/demo/avatars/avatar-admin.png}" class="rounded-circle profile-image" alt="User Profile">
+                            </span>
+                            <div class="info-card-text">
+                                <!-- Display dynamic name and email -->
+                                <div class="fs-lg text-truncate text-truncate-lg" th:text="${userName}">Dr. Codex Lantern</div>
+                                <span class="text-truncate text-truncate-md opacity-80" th:text="${userEmail}">drlantern@gotbootstrap.com</span>
+                            </div>
                         </div>
-                    </header>
-                   
+                    </div>
+                    <div class="dropdown-divider m-0"></div>
+                    <a class="dropdown-item fw-500 pt-3 pb-3" href="/login">
+                        <span>Logout</span>
+                    </a>
                 </div>
             </div>
         </div>
-       
-        <nav class="shortcut-menu d-none d-sm-block">
-            <input type="checkbox" class="menu-open" name="menu-open" id="menu_open" />
-            <label for="menu_open" class="menu-open-button ">
-                <span class="app-shortcut-icon d-block"></span>
-            </label>
-           
-            <a href="page_login.html" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Logout">
-                <i class="fal fa-sign-out"></i>
-            </a>
-            <a href="#" class="menu-item btn" data-action="app-fullscreen" data-toggle="tooltip" data-placement="left" title="Full Screen">
-                <i class="fal fa-expand"></i>
-            </a>
-           
-           
-        </nav>
-       
-        <script>
-            (function(i, s, o, g, r, a, m)
-            {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function()
-                {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '../../../../www.google-analytics.com/analytics.js', 'ga');
 
-            ga('create', 'UA-141754477-1', 'auto');
-            ga('send', 'pageview');
+        <!-- Modal for Shortcut -->
+        <div class="modal fade modal-backdrop-transparent" id="modal-shortcut" tabindex="-1" role="dialog" aria-labelledby="modal-shortcut" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-top modal-transparent" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ul class="app-list w-auto h-auto p-0 text-left">
+                            <li>
+                                <a href="/intel_introduction" class="app-list-item text-white border-0 m-0">
+                                    <div class="icon-stack">
+                                        <i class="base base-7 icon-stack-3x opacity-100 color-primary-500 "></i>
+                                        <i class="base base-7 icon-stack-2x opacity-100 color-primary-300 "></i>
+                                        <i class="fal fa-home icon-stack-1x opacity-100 color-white"></i>
+                                    </div>
+                                    <span class="app-list-name">Home</span>
+                                </a>
+                            </li>
 
-        </script>
-      
-        <script src="js/vendors.bundle.js"></script>
-        <script src="js/app.bundle.js"></script>
-    </body>
+                            <li>
+                                <a href="#" class="app-list-item text-white border-0 m-0" data-toggle="dropdown">
+                                    <div class="icon-stack">
+                                        <i class="base base-7 icon-stack-3x opacity-100 color-info-500"></i>
+                                        <i class="base base-7 icon-stack-2x opacity-100 color-info-300"></i>
+                                        <i class="ni ni-user icon-stack-1x text-white"></i> <!-- Profile Icon -->
+                                    </div>
+                                    <span class="app-list-name">Profile</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="js/vendors.bundle.js"></script>
+    <script src="js/app.bundle.js"></script>
+</body>
 </html>

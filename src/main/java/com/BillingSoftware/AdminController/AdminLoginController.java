@@ -22,14 +22,14 @@ public class AdminLoginController {
         return "page_login";  // Show login page
     }
 
-    @GetMapping("/intel_analytics_dashboard")
-    public String intel_analytics_dashboard() {
-        return "intel_analytics_dashboard"; // Ensure this is the correct view name (intel_introduction.html)
+    @GetMapping("/dashboard")
+    public String dashboard() {
+        return "dashboard"; // Ensure this is the correct view name (index.html)
     }
     
-    @GetMapping("/intel_introduction")
+    @GetMapping("/index")
     public String showIntelIntroduction() {
-        return "intel_introduction"; // Ensure this is the correct view name (intel_introduction.html)
+        return "index"; // Ensure this is the correct view name (index.html)
     }
     @PostMapping("/loginp")
     public String loginp(Login login, RedirectAttributes redirectAttributes) {
@@ -47,7 +47,7 @@ public class AdminLoginController {
             // Passing user information to the redirect
             redirectAttributes.addFlashAttribute("userName", dlogin.getFirstName() + " " + dlogin.getLastName());
             redirectAttributes.addFlashAttribute("userEmail", dlogin.getEmail());
-            page = "redirect:intel_introduction";  // Redirect after successful login
+            page = "redirect:index";  // Redirect after successful login
         } else {
             msg = "Invalid username or password";
             redirectAttributes.addFlashAttribute("msg", msg);  // Passing error message

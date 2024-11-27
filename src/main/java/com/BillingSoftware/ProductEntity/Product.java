@@ -22,6 +22,21 @@ public class Product {
 	    private String description;
 	    private Integer quantity;
 	    private String color;
+	    private String imagePath;
+	    private String Mobile ;
+	    
+		public String getMobile() {
+			return Mobile;
+		}
+		public void setMobile(String mobile) {
+			this.Mobile = mobile;
+		}
+		public String getImagePath() {
+			return imagePath;
+		}
+		public void setImagePath(String imagePath) {
+			this.imagePath = imagePath;
+		}
 		public Long getId() {
 			return id;
 		}
@@ -104,7 +119,7 @@ public class Product {
 			this.brand = brand;
 			this.category = category;
 			this.name = name;
-			this.size = size;
+			this.size 	= size;
 			this.description = description;
 			this.quantity = quantity;
 			this.color = color;

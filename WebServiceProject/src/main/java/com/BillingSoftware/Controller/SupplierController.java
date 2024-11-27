@@ -95,4 +95,5 @@ public class SupplierController {
         model.addAttribute("totalPages", supplierPage.getTotalPages());
         return "supplier-list"; // Return the supplier list view
     }
+   
 }

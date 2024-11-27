@@ -8,7 +8,6 @@ public class BillingSoftwareApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BillingSoftwareApplication.class, args);
-		System.out.println("Pranav..");
+		System.out.println("Done..");
 	}
-
 }

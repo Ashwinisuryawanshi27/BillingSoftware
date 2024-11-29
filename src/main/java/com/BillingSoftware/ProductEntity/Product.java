@@ -24,7 +24,37 @@ public class Product {
 	    private String color;
 	    private String imagePath;
 	    private String Mobile ;
+	    private String productName;
 	    
+	    
+		public String getProductName() {
+			return productName;
+		}
+		public void setProductName(String productName) {
+			this.productName = productName;
+		}
+		public Product() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+		public Product(Long id, String supplierName, String supplierEmail, LocalDate date, String brand,
+				String category, String name, String size, String description, Integer quantity, String color,
+				String imagePath, String mobile) {
+			super();
+			this.id = id;
+			this.supplierName = supplierName;
+			this.supplierEmail = supplierEmail;
+			this.date = date;
+			this.brand = brand;
+			this.category = category;
+			this.name = name;
+			this.size = size;
+			this.description = description;
+			this.quantity = quantity;
+			this.color = color;
+			this.imagePath = imagePath;
+			Mobile = mobile;
+		}
 		public String getMobile() {
 			return Mobile;
 		}
@@ -107,23 +137,11 @@ public class Product {
 		public String toString() {
 			return "Product [id=" + id + ", supplierName=" + supplierName + ", supplierEmail=" + supplierEmail
 					+ ", date=" + date + ", brand=" + brand + ", category=" + category + ", name=" + name + ", size="
-					+ size + ", description=" + description + ", quantity=" + quantity + ", color=" + color + "]";
+					+ size + ", description=" + description + ", quantity=" + quantity + ", color=" + color
+					+ ", imagePath=" + imagePath + ", Mobile=" + Mobile + ", productName=" + productName + "]";
 		}
 		
-		public Product() {
-			super();
-			this.id = id;
-			this.supplierName = supplierName;
-			this.supplierEmail = supplierEmail;
-			this.date = date;
-			this.brand = brand;
-			this.category = category;
-			this.name = name;
-			this.size 	= size;
-			this.description = description;
-			this.quantity = quantity;
-			this.color = color;
-		}
-	    
+		
+		
 	
 }
